@@ -148,8 +148,8 @@ use warehouses
 
 ## **5. Data Population**
 
-## **PostgreSQL**
-** Run the following SQL scripts:**
+### **PostgreSQL**
+**Run the following SQL scripts:**
 ```sql
 -- Insert Organizations
 INSERT INTO organizations (name) VALUES
@@ -197,7 +197,7 @@ END $$;
 
 ```
 
-## **MongoDB**
+### **MongoDB**
 **Run the following script using `mongosh`:**
 ```sql
 -- Connect to the database
@@ -251,7 +251,7 @@ print("Data population completed!");
 ```
 
 ## **6. Write Queries**
-## **postgreSQL**
+### **postgreSQL**
 ```sql
 -- Query 1: Retrieve All Items from a Specific Organization's Warehouse
 SELECT * 
@@ -276,7 +276,7 @@ SELECT warehouse_id, COUNT(*) AS total_items, SUM(quantity) AS total_quantity
 FROM inventory_items
 GROUP BY warehouse_id;
 ```
-## **MongoDB**
+### **MongoDB**
 ```sql
 
 -- Retrieve All Items from a Specific Organization's Warehouse
@@ -305,7 +305,7 @@ db.inventory_items.aggregate([
 
 ```
 ## **7. Add Indexes for Optimization**
-## **postgreSQL**
+### **postgreSQL**
 ```SQL
 
 -- Enable the pg_trgm Extension
@@ -322,7 +322,7 @@ CREATE INDEX idx_inventory_name ON inventory_items USING gin (name gin_trgm_ops)
 ```
 
 ## **7. Add Indexes for Optimization**
-## **MongoDB**
+### **MongoDB**
 ```SQL
 
 -- Index on organization_id
@@ -419,7 +419,7 @@ rs.initiate({
 ```
 
 ## **7. Security**
-## **postgreSQL**
+### **postgreSQL**
 
 ```sql
 -- Create Manager Role
@@ -439,7 +439,7 @@ GRANT manager_role TO alice;
 GRANT staff_role TO bob;
 ```
 
-## **MongoDB**
+### **MongoDB**
 
 ```sql
 
