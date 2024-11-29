@@ -358,7 +358,7 @@ This section outlines the proposed backup and recovery strategies for both **Pos
 
 ## **SQL Database Backup and Recovery Strategy (PostgreSQL)**
 
-### **1. Backup Strategy**
+### **Backup Strategy**
 
 For PostgreSQL, we will implement a **full backup** strategy along with **incremental backups** to ensure data is backed up regularly while minimizing storage usage.
 
@@ -372,7 +372,7 @@ Example command for full backup:
 pg_dump -U postgres -d warehouse -f C:/pgbackup/warehouse_backup.sql
 
 ```
-### **1. Restore**
+### **Restore**
 
 ```sql
 pg_restore -U postgres -d warehouse -f C:/pgbackup/warehouse_backup.sql
@@ -382,7 +382,7 @@ pg_restore -U postgres -d warehouse -f C:/pgbackup/warehouse_backup.sql
 
 ## **NoSQL Database Backup and Replication Strategy (MongoDB)**
 
-### **1. Backup Strategy**
+### **Backup Strategy**
 
 MongoDB requires a flexible backup strategy due to its document-oriented nature and ability to scale horizontally.
 
